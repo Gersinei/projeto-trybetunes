@@ -27,6 +27,13 @@ class Login extends Component {
             type="text"
             onChange={ ({ target }) => this.setState({ name: target
               .value }) }
+            onKeyDown={ async (event) => {
+              if (event.key === 'Enter') {
+                event.preventDefault();
+                await createUser({ name });
+                return history.push('/search');
+              }
+            } }
           />
           <button
             data-testid="login-submit-button"

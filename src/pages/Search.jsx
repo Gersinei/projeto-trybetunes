@@ -47,6 +47,12 @@ class Search extends Component {
                   type="text"
                   onChange={ ({ target }) => this.setState({ nameArtist: target.value }) }
                   data-testid="search-artist-input"
+                  onKeyDown={ async (event) => {
+                    if (event.key === 'Enter') {
+                      event.preventDefault();
+                      this.pesquisar();
+                    }
+                  } }
                 />
 
                 <button

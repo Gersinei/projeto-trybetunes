@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
-import MusicCard from '../components/MusicCard ';
 import getMusics from '../services/musicsAPI';
+import MusicCard from '../components/MusicCard';
 
 class Album extends Component {
   state = {
@@ -48,4 +48,5 @@ Album.propTypes = {
     }),
   }),
 }.isRequired;
+
 export default Album;
